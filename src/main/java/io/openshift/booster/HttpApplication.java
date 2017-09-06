@@ -11,7 +11,7 @@ import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 
 public class HttpApplication extends AbstractVerticle {
 
-  protected static final String template = "Hello, %s!";
+  protected static final String template = "Bonjour, %s!";
 
   @Override
   public void start(Future<Void> future) {
@@ -38,6 +38,9 @@ public class HttpApplication extends AbstractVerticle {
 
   private void greeting(RoutingContext rc) {
     String name = rc.request().getParam("name");
+    
+    System.out.println(name);
+    
     if (name == null) {
       name = "World";
     }
