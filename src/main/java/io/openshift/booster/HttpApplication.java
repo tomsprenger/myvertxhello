@@ -39,8 +39,6 @@ public class HttpApplication extends AbstractVerticle {
   private void greeting(RoutingContext rc) {
     String name = rc.request().getParam("name");
     
-    System.out.println(name);
-    
     if (name == null) {
       name = "World";
     }
